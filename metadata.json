@@ -1,0 +1,5 @@
+{
+  "name": "Vibe Debugger",
+  "description": "An AI-powered code analysis tool that detects 'vibe coding' smells, architectural fragility, and future breaking points.",
+  "requestFramePermissions": []
+}

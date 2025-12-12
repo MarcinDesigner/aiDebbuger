@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vibe Debugger</title>
+    <!-- Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              tech: {
+                // Requested Palette
+                bg: '#1F1F1F',       // Main background
+                surface1: '#252525', // Cards/Panels
+                surface2: '#323232', // Borders/Hover
+                primary: '#E2E2E5',  // Text Primary
+                
+                // Secondary/Accents
+                secondary: '#A1A1AA', // Slightly darker text
+                muted: '#6B7280',     // Muted text
+                accent: '#5B6CFF',    // Indigo Tech
+                
+                border: '#323232',    // Matching surface2 for borders
+                
+                risk: {
+                  high: '#D66A6A',
+                  medium: '#E6B566',
+                  low: '#6BBF9B'
+                }
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+              mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+            },
+            borderRadius: {
+              'card': '8px',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom scrollbar matched to the new dark theme */
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1F1F1F; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #323232; 
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #404040; 
+      }
+      
+      body {
+        background-color: #1F1F1F;
+        color: #E2E2E5;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-tech-bg text-tech-primary h-screen overflow-hidden font-sans antialiased">
+    <div id="root" class="h-full"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
